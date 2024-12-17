@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacklumina</title>
+</head>
+<body>
+    <style>
+        :root {
+            --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            --primary: #346f71;
+            --primary-text-color: #fff;
+            --link-text-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font);
+            color: #fff;
+            background: #000;
+            text-align: center;
+            overflow-x: hidden;
+            height: 100dvh;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .hero-background {
+            background: linear-gradient(180deg, var(--primary), #000000 100%) fixed;
+            height: 100vh;
+            width: 500%;
+            position: absolute;
+            z-index: -1;
+            transform: translate(-16px, -58px);
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 8px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .section {
+            padding: 1rem;
+            display: flex;
+            width: 70%;
+            max-width: 1000px;
+            margin: auto;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 2px dashed #346f7166;
+            border-radius: 24px;
+        }
+
+        .section {
+            width: 50%;
+            margin: auto;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            p {
+                font-size: 1.3rem;
+                margin: 0;
+                display: flex;
+            }
+            h2 {
+                font-size: 2.5rem;
+                margin: 0;
+                padding-bottom: 0.5rem;
+                padding-top: 0.5rem;
+            }
+            a {
+                font-size: 1.3rem;
+            }
+        }
+        hr {
+            border: 1px dashed #ffffff91;
+            width: 100%;
+        }
+        a {
+            font-family: var(--font);
+            color: var(--link-text-color);
+        }
+        a:hover {
+            color: #00aa89;
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+        }
+        a:visited {
+            color: var(--link-text-color);   
+        }
+
+        .filler {
+            flex-grow: 1;
+        }
+
+        .footer {
+            padding: 1rem;
+            font-size: 1rem;
+            display: flex;
+        }
+        .signup {
+            display: flex;
+            align-self: center;
+            flex-direction: row;
+            align-items: center;
+            margin: 48px;
+            max-width: 500px;
+            width: inherit;
+        }
+        #signup-input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid var(--primary);
+            border-radius: 24px;
+            background-color: rgba(255, 255, 255, 0.045);
+            color: white;
+            margin-right: 1.5px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-right: none;
+            font-size: large;
+            height: 50px;
+            padding-left: 32px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease-in-out;
+        }
+        #signup-button {
+            border-radius: 24px;
+            margin: 5px;
+            padding: 8px;
+            height: 68px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            font-size: large;
+            cursor: pointer;
+            width: 150px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            margin-left: 1.5px;
+        }
+        .floating-register-button {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background-color: #346f7150;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.95rem;
+            z-index: 100;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .fade {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .highlights {
+            li {
+                text-align: left;
+                font-size: 1.2rem;
+            }
+        }
+        .run-of-show {
+            p {
+                text-align: left;
+            }
+            h3 {
+                text-align: left;
+                font-size: 2rem;
+            }
+            .filler {
+                flex-grow: 1;
+                margin: 0.35em;
+                border-bottom: 1px dotted #ffffff52;
+                border-bottom-width: 0.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                width: 90%;
+            }
+            .hero {
+                h1 {
+                    font-size: 3rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .footer {
+                font-size: 0.8rem;
+            }
+            .signup {
+                /* flex-direction: column; */
+                margin: 24px;
+            }
+            #signup-input {
+                height: 40px;
+                font-size: medium;
+            }
+            #signup-button {
+                height: 58px;
+                font-size: medium;
+                width: 25%;
+                padding-right: 12px;
+            }
+            .floating-register-button {
+                font-size: 0.8rem;
+                width: 40px;
+                height: 40px;
+            }
+            .section {
+                p {
+                    font-size: 1rem;
+                }
+                h2 {
+                    font-size: 2rem;
+                }
+                a {
+                    font-size: 1rem;
+                }
+            }
+            .run-of-show {
+                h3 {
+                    font-size: 1.5rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    </style>
+    <div class="hero-background"></div>
+    <div class="hero">
+        <h1>Hacklumina ’25</h1>
+        <p>A 36-hours hackathon in Delhi/NCR open to all students under 18!</p>
+        <div class="signup">
+            <input id="signup-input" type="text" class="email" placeholder="Email Address">
+            <button id="signup-button" onclick="signup()">Sign Up</button>
+        </div>
+        <a href="#about" style="font-weight: lighter; text-decoration: none;">Scroll down to learn more!</a>
+    </div>
+    <div class="floating-register-button">
+        Sign Up
+    </div>
+    <main>
+        <div class="section" id="about">
+            <h2>About</h2>
+            <p style="text-align: left;">
+                Hacklumina '25 is an exciting 12-hour in-person hackathon scheduled for May 2025 in Delhi/NCR, designed to inspire students of all levels to dive into the world of coding. Whether you're completely new to programming or already have some experience, this event is all about learning, collaborating, and having fun while discovering the endless opportunities technology has to offer. Join us for an unforgettable day of creativity, learning, and hands-on coding!
+            </p>
+        </div>
+        <div class="section event-details">
+            <h2>Event Details</h2>
+            <p>Venue<span class="filler"></span>Some place in Delhi/NCR</p>
+            <hr/>
+            <p>Time<span class="filler"></span>24th May 9:00 AM -  25th May 9:00 PM</p>
+            <div style="height: 8px;"></div>
+        </div>
+        <div class="section highlights">
+            <h2>Highlights</h2>
+            <ul>
+                <li>Workshops and Mentorship: Sessions led by experienced programmers to help participants learn new stuff!</li>
+                <li>Networking Opportunities: Meet like-minded students passionate about technology!</li>
+                <li>Exciting Rewards: Certificates, and prizes for outstanding projects and participation!</li>
+            </ul>
+        </div>
+        <div class="section run-of-show">
+            <h2>Run of Show</h2>
+            <h3>Day 1</h3>
+            <p>Doors open <span class="filler"></span> 8:00 AM</p>
+            <p>Opening Ceremony (in the garden) <span class="filler"></span> 8:15 AM</p>
+            <p>Introductions (and teams or individuals?) <span class="filler"></span> 8:30 AM</p>
+            <p>Breakfast<span class="filler"></span> 9:00 AM</p>
+            <p>Workshops start!<span class="filler"></span> 10:00 AM</p>
+            <p>Lunch time!<span class="filler"></span> 2:00 PM</p>
+            <p>Continue working on your projects<span class="filler"></span> 3:30 PM</p>
+            <p>Snacks time! (keep coding, though!) <span class="filler"></span> 6:00 PM</p>
+            <p>Dinner! <span class="filler"></span> 8:00 PM</p>
+            <p>Game night begins <span class="filler"></span> 10:00 PM</p>
+            <p>Game night ends! Sleep whenever you’d like, if you want to! <span class="filler"></span> 11:30 PM</p>
+            <h3>Day 2</h3>
+            <p>Convene <span class="filler"></span> 8:00 AM</p>
+            <p>Breakfast <span class="filler"></span> 9:00 AM</p>
+            <p>Wrap up your projects! <span class="filler"></span> 4:30 PM</p>
+            <p>Submissions start <span class="filler"></span> 5:00 PM</p>
+            <p>Judges review <span class="filler"></span> 5:30 PM</p>
+            <p>Announcements <span class="filler"></span> 6:30 PM</p>            
+            <p>Prize distribution <span class="filler"></span> 7:00 PM</p>
+            <p>Closing ceremony <span class="filler"></span> 7:30 PM</p>
+            <p>Wrap up!! <span class="filler"></span> 8:00 PM</p>
+        </div>
+        <div class="section contact">
+            <h2>Contact Us</h2>
+            <p>Kavish Devar (co-organizer)<span class="filler"></span> <a href="mailto:kavish@hacklumina.tech">kavish@hacklumina.tech</a></p>
+            <hr/>
+            <p>Angad Singh (co-organizer)<span class="filler"></span> <a href="mailto:angad@hacklumina.tech">angad@hacklumina.tech</a></p>
+            <hr/>
+            <p>Shrey Mehra (co-organizer)<span class="filler"></span> <a href="mailto:shrey@hacklumina.tech">shrey@hacklumina.tech</a></p>
+            <hr/>
+            <p>Manan Sharma (co-organizer)<span class="filler"></span> <a href="mailto:manan@hacklumina.tech">manan@hacklumina.tech</a></p>
+            <hr/>
+            <p>Everyone at Hacklumina<span class="filler"></span> <a href="mailto:contact@hacklumina.tech">contact@hacklumina.tech</a></p>
+            <hr/>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="https://hacklumina.tech" target="_blank">hacklumina.tech</a> | <a href="https://twitter.com/hacklumina" target="_blank">Twitter</a> | <a href="https://instagram.com/hacklumina" target="_blank">Instagram</a> | <a href="https://bsky.app/profile/hacklumina.tech" target="_blank">Bluesky</a>
+            </p>
+            <div class="filler"></div>
+            <p>&copy; 2024- Hacklumina</p>
+        </div>
+    </main>
+    <script>
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const floatingButton = document.querySelector('.floating-register-button');
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            floatingButton.classList.add('fade');
+            if (heroBottom <= 250) {
+                floatingButton.style.opacity = 1;
+            } else {
+                floatingButton.style.opacity = 0;
+            }
+            document.querySelector('main').style.transform = `translateY(-${window.scrollY * 1/2}px)`;
+            hero.style.transform = 
+        `scale(${1 - window.scrollY / 1000}) perspective(350px) rotateX(${window.scrollY / 10}deg)`
+        });
+    </script>
+</body>
+</html>
