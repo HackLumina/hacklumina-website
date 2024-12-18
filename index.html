@@ -180,7 +180,7 @@
         .highlights {
             li {
                 text-align: left;
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
         }
         .run-of-show {
@@ -253,13 +253,25 @@
                 }
             }
         }
+        #title{
+            animation: floatAnimation 4s ease-in-out infinite;
+        }
+        @keyframes floatAnimation {
+
+            0% { transform: translateY(0); }
+          
+            50% { transform: translateY(-5px); } /* Adjust the '5px' value for the float intensity */
+          
+            100% { transform: translateY(0); }
+          
+          }
     </style>
     <div class="hero">
-        <h1 id="title">Hacklumina’25</h1>
+        <h1 id="title">HackLumina’25</h1>
         <p>A 36-hours hackathon in Delhi/NCR open to all students under 18!</p>
-        <div class="signup" id="signup">
-            <input id="signup-input" type="text" class="email" placeholder="Email Address">
-            <button id="signup-button" onclick="signup()">Sign Up</button>
+        <div class="signup" id="signup" style="font-family: 'Space Mono',monospace;">
+            <input id="signup-input" type="text" class="email" placeholder="Email Address" style="font-family: 'Space Mono',monospace;">
+            <button id="signup-button" onclick="signup()" style="font-family: 'Space Mono',monospace;">Sign Up</button>
         </div>
         <a href="#about" style="font-weight: lighter; text-decoration: none;">Scroll down to learn more!</a>
     </div>
@@ -270,7 +282,7 @@
         <div class="section" id="about">
             <h2>About</h2>
             <p style="text-align: left;">
-                Hacklumina '25 is an exciting 12-hour in-person hackathon scheduled for May 2025 in Delhi/NCR, designed to inspire students of all levels to dive into the world of coding. Whether you're completely new to programming or already have some experience, this event is all about learning, collaborating, and having fun while discovering the endless opportunities technology has to offer. Join us for an unforgettable day of creativity, learning, and hands-on coding!
+                HackLumina '25 is an exciting 12-hour in-person hackathon scheduled for May 2025 in Delhi/NCR, designed to inspire students of all levels to dive into the world of coding. Whether you're completely new to programming or already have some experience, this event is all about learning, collaborating, and having fun while discovering the endless opportunities technology has to offer. Join us for an unforgettable day of creativity, learning, and hands-on coding!
             </p>
         </div>
         <div class="section event-details">
@@ -316,20 +328,21 @@
         </div>
         <div class="section contact">
             <h2>Contact Us</h2>
-            <p>Kavish Devar (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=kavish@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">kavish@hacklumina.tech</a></p>
+            <p>Kavish Devar<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=kavish@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;"  >kavish@hacklumina.tech</a></p>
             <hr/>
-            <p>Angad Singh (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=angad@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">angad@hacklumina.tech</a></p>
+            <p>Angad Singh<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=angad@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">angad@hacklumina.tech</a></p>
             <hr/>
-            <p>Shrey Mehra (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=shrey@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">shrey@hacklumina.tech</a></p>
+            <p>Shrey Mehra<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=shrey@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">shrey@hacklumina.tech</a></p>
             <hr/>
-            <p>Manan Sharma (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=manan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">manan@hacklumina.tech</a></p>
+            <p>Manan Sharma<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=manan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">manan@hacklumina.tech</a></p>
             <hr/>
-            <p>Everyone at Hacklumina<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=contact@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">contact@hacklumina.tech</a></p>
+            <p>Vihaan Pingalkar<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=vihaan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">vihaan@hacklumina.tech</a></p>
+            <hr/><p>Everyone at HackLumina<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=contact@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">contact@hacklumina.tech</a></p>
             <div style="height: 8px;"></div>
         </div>
         <div class="footer">
             <p>
-                <a href="https://hacklumina.tech" target="_blank">hacklumina.tech</a> | <a href="https://twitter.com/hacklumina" target="_blank">Twitter</a> | <a href="https://instagram.com/hacklumina" target="_blank">Instagram</a> | <a href="https://bsky.app/profile/hacklumina.tech" target="_blank">Bluesky</a>
+                <a href="https://hacklumina.tech" target="_blank">hacklumina.tech</a> | <a href="https://x.com/hackluminatech?t=arXg7VtBcvv4os-Gf9YlyA&s=09" target="_blank">X (Twitter)</a> | <a href="https://instagram.com/hacklumina.tech" target="_blank">Instagram</a> | <a href="https://bsky.app/profile/hacklumina.tech" target="_blank">Bluesky</a>
             </p>
             <div class="filler"></div>
             <p>&copy; 2024- Hacklumina</p>
