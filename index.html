@@ -8,6 +8,7 @@
 <body>
     <div class="hero-background"></div>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         :root {
             --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             --primary: #346f71;
@@ -17,7 +18,7 @@
         }
         
         body {
-            font-family: var(--font);
+            font-family: "Space Mono",monospace;
             color: #fff;
             background: #000;
             text-align: center;
@@ -254,15 +255,15 @@
         }
     </style>
     <div class="hero">
-        <h1>Hacklumina ’25</h1>
+        <h1 id="title">Hacklumina’25</h1>
         <p>A 36-hours hackathon in Delhi/NCR open to all students under 18!</p>
-        <div class="signup">
+        <div class="signup" id="signup">
             <input id="signup-input" type="text" class="email" placeholder="Email Address">
             <button id="signup-button" onclick="signup()">Sign Up</button>
         </div>
         <a href="#about" style="font-weight: lighter; text-decoration: none;">Scroll down to learn more!</a>
     </div>
-    <div class="floating-register-button">
+    <div class="floating-register-button" onclick="scrollToSign()">
         Sign Up
     </div>
     <main>
@@ -315,15 +316,15 @@
         </div>
         <div class="section contact">
             <h2>Contact Us</h2>
-            <p>Kavish Devar (co-organizer)<span class="filler"></span> <a href="mailto:kavish@hacklumina.tech">kavish@hacklumina.tech</a></p>
+            <p>Kavish Devar (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=kavish@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">kavish@hacklumina.tech</a></p>
             <hr/>
-            <p>Angad Singh (co-organizer)<span class="filler"></span> <a href="mailto:angad@hacklumina.tech">angad@hacklumina.tech</a></p>
+            <p>Angad Singh (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=angad@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">angad@hacklumina.tech</a></p>
             <hr/>
-            <p>Shrey Mehra (co-organizer)<span class="filler"></span> <a href="mailto:shrey@hacklumina.tech">shrey@hacklumina.tech</a></p>
+            <p>Shrey Mehra (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=shrey@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">shrey@hacklumina.tech</a></p>
             <hr/>
-            <p>Manan Sharma (co-organizer)<span class="filler"></span> <a href="mailto:manan@hacklumina.tech">manan@hacklumina.tech</a></p>
+            <p>Manan Sharma (co-organizer)<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=manan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">manan@hacklumina.tech</a></p>
             <hr/>
-            <p>Everyone at Hacklumina<span class="filler"></span> <a href="mailto:contact@hacklumina.tech">contact@hacklumina.tech</a></p>
+            <p>Everyone at Hacklumina<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=contact@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm">contact@hacklumina.tech</a></p>
             <div style="height: 8px;"></div>
         </div>
         <div class="footer">
@@ -349,6 +350,10 @@
             hero.style.transform = 
         `scale(${1 - window.scrollY / 1000}) perspective(350px) rotateX(${window.scrollY / 10}deg)`
         });
+
+        function scrollToSign(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;}
     </script>
 </body>
 </html>
