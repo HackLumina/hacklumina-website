@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style src="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"></style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=description" />
     <title>Hacklumina</title>
 </head>
 <body>
     <div class="hero-background"></div>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
         :root {
-            --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            --font: 'Space Mono', monospace;
             --primary: #346f71;
             --primary-text-color: #fff;
             --link-text-color: #ffffff;
             scroll-behavior: smooth;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: "Space Mono",monospace;
+            font-family: var(--font);
             color: #fff;
             background: #000;
             text-align: center;
@@ -31,16 +36,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100%;
         }
         
         .hero-background {
             background: linear-gradient(180deg, var(--primary), #000000 100%) fixed;
-            height: 100vh;
+            height: 100dvh;
             width: 100%;
             position: absolute;
+            top: 0;
+            left: 0;
             z-index: -1;
-            transform: translate(-16px, -58px);
+            transform: translateY(-12px);
         }
 
         h1 {
@@ -95,7 +102,7 @@
             font-family: var(--font);
             color: var(--link-text-color);
         }
-        a:hover {
+        a:hover:not(.socials-icon) {
             color: #00aa89;
             text-decoration-line: underline;
             text-decoration-style: wavy;
@@ -112,7 +119,9 @@
             padding: 1rem;
             font-size: 1rem;
             display: flex;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
+
         .signup {
             display: flex;
             align-self: center;
@@ -121,7 +130,9 @@
             margin: 48px;
             max-width: 500px;
             width: inherit;
+            margin-top: 1rem;
         }
+
         #signup-input {
             width: 100%;
             padding: 8px;
@@ -180,7 +191,7 @@
         .highlights {
             li {
                 text-align: left;
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
         }
         .run-of-show {
@@ -198,7 +209,11 @@
                 border-bottom-width: 0.3rem;
             }
         }
-
+        @media (max-width: 350px) {
+            .hero-background {
+                width: 101dvb;
+            }
+        }
         @media (max-width: 768px) {
             .section {
                 width: 90%;
@@ -215,7 +230,6 @@
                 font-size: 0.8rem;
             }
             .signup {
-                /* flex-direction: column; */
                 margin: 24px;
             }
             #signup-input {
@@ -252,47 +266,119 @@
                     font-size: 1rem;
                 }
             }
+            #footer-link {
+                display: none;
+            }
+            .socials-icon {
+                img {
+                    height: 1.2em;
+                }
+            }
         }
         #title{
             animation: floatAnimation 4s ease-in-out infinite;
         }
         @keyframes floatAnimation {
-
             0% { transform: translateY(0); }
-          
-            50% { transform: translateY(-5px); } /* Adjust the '5px' value for the float intensity */
-          
-            100% { transform: translateY(0); }
-          
-          }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }  
+        }
+        .socials-icon {
+            text-decoration: none;
+            margin: 0 8px;
+            img {
+                height: 1.5em;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+        .socials-icon:hover img {
+            filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1326%) hue-rotate(133deg) brightness(95%) contrast(94%);
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sponsors img{
+            border-radius: 24px;
+            height: 172px;
+            width: 172px;
+            margin: 8px;
+            object-fit: cover;
+        }
+
+        .sponsor-us {
+            p {
+                text-align: left;
+                display: block;
+                margin: 8px;
+            }
+        }
+        .prospectus-box {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #00000099;
+            border-radius: 12px;
+            padding: 12px 32px;
+            margin: auto;
+            max-width: 600px;
+            border: 2px solid #346f71;
+            transition: all 0.3s ease-in-out;
+            .text {
+                text-align: left;
+            }
+            .file-icon {
+                font-size: 3rem;
+            }
+            .filler {
+                min-width: 32px;
+            }
+        }
+
+        .prospectus-box:hover {
+            background-color: #346f71;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .prospectus-download-link {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <div class="hero">
-        <h1 id="title">HackLumina’25</h1>
+        <h1>Hacklumina ’25</h1>
         <p>A 36-hours hackathon in Delhi/NCR open to all students under 18!</p>
-        <div class="signup" id="signup" style="font-family: 'Space Mono',monospace;">
-            <input id="signup-input" type="text" class="email" placeholder="Email Address" style="font-family: 'Space Mono',monospace;">
-            <button id="signup-button" onclick="signup()" style="font-family: 'Space Mono',monospace;">Sign Up</button>
+        <div style="height: 48px;"></div>
+        <p>Sign up for updates here!</p>
+        <div class="signup">
+            <input id="signup-input" type="text" class="email" placeholder="Email Address">
+            <button id="signup-button" onclick="signup()">Sign Up</button>
         </div>
         <a href="#about" style="font-weight: lighter; text-decoration: none;">Scroll down to learn more!</a>
     </div>
-    <div class="floating-register-button" onclick="scrollToSign()">
+    <div class="floating-register-button">
         Sign Up
     </div>
     <main>
         <div class="section" id="about">
             <h2>About</h2>
             <p style="text-align: left;">
-                HackLumina '25 is an exciting 12-hour in-person hackathon scheduled for May 2025 in Delhi/NCR, designed to inspire students of all levels to dive into the world of coding. Whether you're completely new to programming or already have some experience, this event is all about learning, collaborating, and having fun while discovering the endless opportunities technology has to offer. Join us for an unforgettable day of creativity, learning, and hands-on coding!
+                Hacklumina '25 is an exciting 12-hour in-person hackathon scheduled for May 2025 in Delhi/NCR, designed to inspire students of all levels to dive into the world of coding. Whether you're completely new to programming or already have some experience, this event is all about learning, collaborating, and having fun while discovering the endless opportunities technology has to offer. Join us for an unforgettable day of creativity, learning, and hands-on coding!
             </p>
         </div>
-        <div class="section event-details">
+        <div class="section event-details" id="details" id="event-details">
             <h2>Event Details</h2>
             <p>Venue<span class="filler"></span>Some place in Delhi/NCR</p>
             <hr/>
-            <p>Time<span class="filler"></span>24th May 9:00 AM -  25th May 9:00 PM</p>
+            <p>Time<span class="filler"></span>Some day in May 9:00 AM -  the following day 9:00 PM</p>
             <div style="height: 8px;"></div>
         </div>
-        <div class="section highlights">
+        <div class="section highlights" id="highlights">
             <h2>Highlights</h2>
             <ul>
                 <li>Workshops and Mentorship: Sessions led by experienced programmers to help participants learn new stuff!</li>
@@ -300,73 +386,116 @@
                 <li>Exciting Rewards: Certificates, and prizes for outstanding projects and participation!</li>
             </ul>
         </div>
-        <div class="section run-of-show">
+        <div class="section run-of-show" id="run-of-show">
             <h2>Run of Show</h2>
             <h3>Day 1</h3>
             <p>Doors open <span class="filler"></span> 8:00 AM</p>
             <p>Opening Ceremony (in the garden) <span class="filler"></span> 8:15 AM</p>
             <p>Introductions (and teams or individuals?) <span class="filler"></span> 8:30 AM</p>
             <p>Breakfast<span class="filler"></span> 9:00 AM</p>
-            <p>Workshops start!<span class="filler"></span> 10:00 AM</p>
-            <p>Lunch time!<span class="filler"></span> 2:00 PM</p>
+            <p>Workshops start<span class="filler"></span> 10:00 AM</p>
+            <p>Lunch time<span class="filler"></span> 2:00 PM</p>
             <p>Continue working on your projects<span class="filler"></span> 3:30 PM</p>
-            <p>Snacks time! (keep coding, though!) <span class="filler"></span> 6:00 PM</p>
-            <p>Dinner! <span class="filler"></span> 8:00 PM</p>
+            <p>Snacks time <span class="filler"></span> 6:00 PM</p>
+            <p>Dinner <span class="filler"></span> 8:00 PM</p>
             <p>Game night begins <span class="filler"></span> 10:00 PM</p>
-            <p>Game night ends! Sleep whenever you’d like, if you want to! <span class="filler"></span> 11:30 PM</p>
+            <p>Game night ends, sleep if you'd like<span class="filler"></span> 11:30 PM</p>
             <h3>Day 2</h3>
             <p>Convene <span class="filler"></span> 8:00 AM</p>
             <p>Breakfast <span class="filler"></span> 9:00 AM</p>
-            <p>Wrap up your projects! <span class="filler"></span> 4:30 PM</p>
+            <p>Wrap up your projects <span class="filler"></span> 4:30 PM</p>
             <p>Submissions start <span class="filler"></span> 5:00 PM</p>
             <p>Judges review <span class="filler"></span> 5:30 PM</p>
             <p>Announcements <span class="filler"></span> 6:30 PM</p>            
             <p>Prize distribution <span class="filler"></span> 7:00 PM</p>
             <p>Closing ceremony <span class="filler"></span> 7:30 PM</p>
-            <p>Wrap up!! <span class="filler"></span> 8:00 PM</p>
+            <p>Wrap up <span class="filler"></span> 8:00 PM</p>
             <div style="height: 8px;"></div>
         </div>
-        <div class="section contact">
+        <div class="section sponsors" id="sponsors">
+            <h2>Sponsors</h2>
+            <div class="sponsors-list">
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+                <img src="https://picsum.photos/200/200" alt="sponsor"/>
+            </div>
+        </div>
+        <div class="section sponsor-us" id="sponsor-us">
+            <h2>Sponsor Us</h2>
+            <p>
+                Interested in sponsoring <span style="white-space: nowrap;">Hacklumina '25</span>? We'd love to have you on board! Reach out to us at <a href="mailto:sponsorships@hacklumina.tech">sponsorships@hacklumina.tech</a> to learn more about our sponsorship opportunities.
+            </p>
+            <div class="prospectus-box" onclick="window.open('/prospectus.pdf', '_blank')">
+                <div class="text">
+                    <h3>Download our prospectus</h3>
+                </div>
+                <div class="filler"></div>
+                <span class="material-symbols-outlined file-icon">
+                    description
+                </span>
+            </div>
+            <div style="height: 8px;"></div>
+        </div>
+        <div class="section contact" id="contact">
             <h2>Contact Us</h2>
-            <p>Kavish Devar<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=kavish@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;"  >kavish@hacklumina.tech</a></p>
+            <p>Kavish Devar<span class="filler"></span> <a href="mailto:kavish@hacklumina.tech">kavish@hacklumina.tech</a></p>
             <hr/>
-            <p>Angad Singh<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=angad@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">angad@hacklumina.tech</a></p>
+            <p>Angad Singh<span class="filler"></span> <a href="mailto:angad@hacklumina.tech">angad@hacklumina.tech</a></p>
             <hr/>
-            <p>Shrey Mehra<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=shrey@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">shrey@hacklumina.tech</a></p>
+            <p>Shrey Mehra<span class="filler"></span> <a href="mailto:shrey@hacklumina.tech">shrey@hacklumina.tech</a></p>
             <hr/>
-            <p>Manan Sharma<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=manan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">manan@hacklumina.tech</a></p>
+            <p>Manan Sharma<span class="filler"></span> <a href="mailto:manan@hacklumina.tech">manan@hacklumina.tech</a></p>
             <hr/>
-            <p>Vihaan Pingalkar<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=vihaan@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">vihaan@hacklumina.tech</a></p>
-            <hr/><p>Everyone at HackLumina<span class="filler"></span> <a href="https://mail.google.com/mail/u/0/?fs=1&to=contact@hacklumina.tech&su=HackLumina25+query&body=Hey!+I+wanted+to+ask+something+about+HackLumina25.....&tf=cm" style="font-family: 'Space Mono',monospace;">contact@hacklumina.tech</a></p>
+            <p>Everyone at Hacklumina<span class="filler"></span> <a href="mailto:contact@hacklumina.tech">contact@hacklumina.tech</a></p>
             <div style="height: 8px;"></div>
         </div>
         <div class="footer">
             <p>
-                <a href="https://hacklumina.tech" target="_blank">hacklumina.tech</a> | <a href="https://x.com/hackluminatech?t=arXg7VtBcvv4os-Gf9YlyA&s=09" target="_blank">X (Twitter)</a> | <a href="https://instagram.com/hacklumina.tech" target="_blank">Instagram</a> | <a href="https://bsky.app/profile/hacklumina.tech" target="_blank">Bluesky</a>
+                <a href="https://twitter.com/hackluminatech" target="_blank" class="socials-icon">
+                    <img src="/x.png"/>
+                </a>
+                <a href="https://instagram.com/hacklumina" target="_blank" class="socials-icon">
+                    <img src="/instagram.png"/>
+                </a>
+                <a href="https://bsky.app/profile/hacklumina.tech" target="_blank" class="socials-icon">
+                    <img src="/bsky.png"/>
+                </a>
             </p>
             <div class="filler"></div>
             <p>&copy; 2024- Hacklumina</p>
         </div>
     </main>
     <script>
+        var lastTranslate = 0;
         window.addEventListener('scroll', () => {
             const hero = document.querySelector('.hero');
             const floatingButton = document.querySelector('.floating-register-button');
             const heroBottom = hero.getBoundingClientRect().bottom;
-            floatingButton.classList.add('fade');
-            if (heroBottom <= 250) {
-                floatingButton.style.opacity = 1;
-            } else {
+            // floatingButton.classList.add('fade');
+            // if (heroBottom <= 250) {
+            //     floatingButton.style.opacity = 1;
+            // } else {
+            //     floatingButton.style.opacity = 0;
+            // }
+            const footer = document.querySelector('.footer');
+            const footerTop = footer.getBoundingClientRect().top;
+            
+            if (heroBottom > 0) {
+                lastTranslate = window.scrollY * 1/2;
                 document.querySelector('main').style.transform = `translateY(-${window.scrollY * 1/2}px)`;
-                floatingButton.style.opacity = 0;
+            } else {
+                document.querySelector('main').style.transform = `translateY(-${lastTranslate}px)`;
             }
-            hero.style.transform = 
-        `scale(${1 - window.scrollY / 1000}) perspective(350px) rotateX(${window.scrollY / 10}deg)`
+            if (1 - window.scrollY / 1000 > 0.5) {
+                hero.style.transform = `scale(${1 - window.scrollY / 1000}) perspective(350px) rotateX(${window.scrollY / 10}deg)`
+            }
         });
-
-        function scrollToSign(){
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;}
     </script>
 </body>
 </html>
