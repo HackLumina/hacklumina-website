@@ -544,6 +544,7 @@
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status === 200)
                     {
+                        emailEl.value = ""
                         showToast(true)
                     }
                     else {
