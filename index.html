@@ -557,8 +557,8 @@
         function showToast(success) {
             var x = document.getElementById("snackbar");
             x.className = "show";
-            if (success) x.innerHTML = "You've successfully subscribed to receive updates from Hacklumina!";
-            else x.innerHTML = "Unable to subscribe to the mailing list, please mail <a href='mailto:contact@hacklumina.tech'>mailto:contact@hacklumina.tech</a> to be added to the mailing list."
+            if (success) x.innerHTML = "Subscribed successfully!";
+            else x.innerHTML = "Couldn't subscribe! Please try agan..."
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
     </script>
