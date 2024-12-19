@@ -397,7 +397,7 @@
         <div style="height: 48px;"></div>
         <p>Sign up for updates here!</p>
         <div class="signup">
-            <input id="signup-input" type="text" class="email" id="email" placeholder="Email Address">
+            <input id="signup-input" type="text" class="email" placeholder="Email Address">
             <button id="signup-button" onclick="signup()">Sign Up</button>
         </div>
         <a href="#about" style="font-weight: lighter; text-decoration: none;">Scroll down to learn more!</a>
@@ -533,10 +533,10 @@
             }
         });
         function signup() {
-            const emailEl = document.getElementById('email')
+            const emailEl = document.getElementById('signup-input')
             const email = emailEl.value
             xhr = new XMLHttpRequest()
-            xhr.open("POST", "/server", true);
+            xhr.open("POST", "/subscribe", true);
 
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
